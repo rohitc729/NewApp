@@ -10,3 +10,7 @@ Generate your API key.
 
 step 2: replace api key 
 In NewsRepositoryImpl.kt replace BuildConfig.API_KEY with your api key
+<p align="center">
+  <img src="screenshots/home.png" width="250">
+  <img src="screenshots/details.png" width="250">
+</p>
