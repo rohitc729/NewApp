@@ -105,8 +105,7 @@ fun App(navController: NavHostController) {
     val tabs = listOf(
         "All",
         "Business",
-        "Tech",
-        "Crime"
+        "Tech"
     )
     var selectedTab by remember { mutableIntStateOf(0) }
 
@@ -176,8 +175,9 @@ fun App(navController: NavHostController) {
             ) {
                 PrimaryScrollableTabRow(
                     selectedTabIndex = selectedTab,
-                    edgePadding = 0.dp,
-                    containerColor = Color(0xFFCB0000)
+                    containerColor = Color(0xFFCB0000),
+                    modifier = Modifier.fillMaxWidth(),
+                    minTabWidth = 100.dp
                 ) {
                     tabs.forEachIndexed { index, title ->
                         Tab(
@@ -214,7 +214,6 @@ fun App(navController: NavHostController) {
                             0 -> AllNewsContent(newsState.data, navController = navController)
                             1 -> BusinessNewsContent(newsState.data, navController = navController)
                             2 -> TechNewsContent(newsState.data, navController = navController)
-                            3 -> CrimeNewsContent(newsState.data, navController = navController)
                         }
                     }
                 }

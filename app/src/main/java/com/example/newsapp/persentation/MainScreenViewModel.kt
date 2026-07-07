@@ -33,7 +33,6 @@ class MainScreenViewModel @Inject constructor(
         "general",      // All News
         "business",
         "technology",
-        "crime"
     )
 
     init {
