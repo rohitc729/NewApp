@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.konan.properties.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -24,7 +26,13 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
+val secretProperties= Properties()
+    val secreteFile= rootProject.file("secret.properties")
+    if(secreteFile.exists() && secreteFile.isFile){
+        secreteFile.inputStream().use { input->
+            secretProperties.load(input)
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled=true
@@ -33,6 +41,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String","API_KEY",secretProperties.getProperty("API_KEY"))
+        }
+        debug {
+            buildConfigField("String","API_KEY",secretProperties.getProperty("API_KEY"))
         }
     }
     compileOptions {

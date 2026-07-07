@@ -11,7 +11,7 @@ class NewsRepositoryImpl @Inject constructor(
     override suspend fun getAllNews(category:String): Response<NewsResponse> {
         return newsApi.getNews(
             category = category,
-            apiKey = "6dafd596881ce6f0978239506a866093"
+            apiKey = ""
         )
     }
 }
