@@ -52,6 +52,8 @@ val secretProperties= Properties()
         targetCompatibility = JavaVersion.VERSION_11
     }
     buildFeatures {
+        buildConfig=true
+        resValues=true
         compose = true
     }
 }

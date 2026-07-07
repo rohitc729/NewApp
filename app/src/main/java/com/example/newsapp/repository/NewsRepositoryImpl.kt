@@ -1,5 +1,6 @@
 package com.example.newsapp.repository
 
+import com.example.newsapp.BuildConfig
 import com.example.newsapp.retrofit.NewsApi
 import com.example.newsapp.retrofit.NewsResponse
 import retrofit2.Response
@@ -11,7 +12,7 @@ class NewsRepositoryImpl @Inject constructor(
     override suspend fun getAllNews(category:String): Response<NewsResponse> {
         return newsApi.getNews(
             category = category,
-            apiKey = ""
+            apiKey = BuildConfig.API_KEY
         )
     }
 }
