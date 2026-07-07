@@ -1,6 +1,5 @@
 package com.example.newsapp.persentation
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
